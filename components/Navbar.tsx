@@ -37,7 +37,7 @@ export function Navbar() {
 
   return <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
     <div className="nav-inner">
-      <BrandLogo dark={scrolled} />
+      <BrandLogo dark={dark} />
       <nav className="desktop-nav" aria-label="Primary navigation">{links.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}<Button href="/contact" variant="primary" arrow>Get in touch</Button></nav>
       <div className="nav-actions"><button className="theme-toggle" onClick={toggleTheme} aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}>{dark ? <Sun size={17} /> : <Moon size={17} />}</button><button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? "Close menu" : "Open menu"}>{open ? <X /> : <Menu />}</button></div>
     </div>
