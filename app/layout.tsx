@@ -1,17 +1,25 @@
-import type { Metadata } from "next";
-import "@fontsource-variable/inter";
+import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+import { pageMeta, site } from "../constants/content";
+import { createMetadata } from "../lib/seo";
+
+const inter = localFont({
+  src: "./fonts/Inter-Variable.woff2",
+  variable: "--font-inter",
+  display: "swap",
+  weight: "300 700",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://foundryandloop.com"),
-  title: { default: "Foundry & Loop — Built with purpose.", template: "%s — Foundry & Loop" },
-  description: "Foundry & Loop is a technology company building software that matters.",
-  keywords: ["Foundry & Loop", "technology company", "artificial intelligence", "software products"],
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-  openGraph: { title: "Foundry & Loop — Built with purpose.", description: "Foundry & Loop is a technology company building software that matters.", type: "website", siteName: "Foundry & Loop", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Foundry & Loop — Building software that matters." }] },
-  twitter: { card: "summary_large_image", title: "Foundry & Loop — Built with purpose.", description: "Foundry & Loop is a technology company building software that matters.", images: ["/og.png"] },
+  metadataBase: new URL(site.url),
+  ...createMetadata(pageMeta.home.title, pageMeta.home.description),
+  keywords: [site.name, "technology company", "artificial intelligence", "software products"],
+  icons: { icon: "/favicon.png", shortcut: "/favicon.png", apple: "/favicon.png" },
 };
 
+export const viewport: Viewport = { colorScheme: "light dark", themeColor: [{ media: "(prefers-color-scheme: light)", color: "#fbfcfe" }, { media: "(prefers-color-scheme: dark)", color: "#0b0f1c" }] };
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: `try{if(localStorage.getItem('foundry-theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}` }} /></head><body>{children}</body></html>;
+  return <html lang="en" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: `try{if(localStorage.getItem('foundry-theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}` }} /></head><body className={inter.variable}>{children}</body></html>;
 }

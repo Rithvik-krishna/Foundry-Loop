@@ -1,3 +1,5 @@
+import { homeContent } from "../constants/content";
+
 export function LogoStrip() {
-  return <div className="logo-strip" aria-label="Areas of focus"><span>ARTIFICIAL INTELLIGENCE</span><span>SOFTWARE</span><span>DEVELOPER TOOLS</span><span>FUTURE TECHNOLOGIES</span></div>;
+  return <div className="logo-strip" aria-label="Areas of focus">{homeContent.areas.map((area) => <span key={area}>{area}</span>)}</div>;
 }

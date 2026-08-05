@@ -6,13 +6,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BrandLogo } from "./BrandLogo";
 import { Button } from "./Button";
-
-const links = [
-  ["About", "/about"],
-  ["Products", "/products"],
-  ["News", "/news"],
-  ["Careers", "/careers"],
-];
+import { navigation } from "../constants/content";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,9 +32,9 @@ export function Navbar() {
   return <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
     <div className="nav-inner">
       <BrandLogo dark={dark} />
-      <nav className="desktop-nav" aria-label="Primary navigation">{links.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}<Button href="/contact" variant="primary" arrow>Get in touch</Button></nav>
+      <nav className="desktop-nav" aria-label="Primary navigation">{navigation.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}<Button href="/contact" variant="primary" arrow>Get in touch</Button></nav>
       <div className="nav-actions"><button className="theme-toggle" onClick={toggleTheme} aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}>{dark ? <Sun size={17} /> : <Moon size={17} />}</button><button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? "Close menu" : "Open menu"}>{open ? <X /> : <Menu />}</button></div>
     </div>
-    <AnimatePresence>{open && <motion.div className="mobile-menu" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.25 }}><div className="mobile-menu-links">{links.map(([label, href], index) => <motion.div key={href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.04 }}><Link href={href} onClick={() => setOpen(false)}>{label}<span>↗</span></Link></motion.div>)}<Button href="/contact" onClick={() => setOpen(false)}>Get in touch</Button></div></motion.div>}</AnimatePresence>;
+    <AnimatePresence>{open && <motion.div className="mobile-menu" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.25 }}><div className="mobile-menu-links">{navigation.map((link, index) => <motion.div key={link.href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.04 }}><Link href={link.href} onClick={() => setOpen(false)}>{link.label}<span>↗</span></Link></motion.div>)}<Button href="/contact" onClick={() => setOpen(false)}>Get in touch</Button></div></motion.div>}</AnimatePresence>;
   </header>;
 }
