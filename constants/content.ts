@@ -4,7 +4,7 @@ export const site = {
   url: "https://foundryandloop.com",
   description: "Foundry & Loop is a technology company building software that matters.",
   tagline: "Built with purpose.",
-  email: "hello@foundryandloop.com",
+  email: "contact@foundrynloop.in",
   location: "Global / Remote-first",
   copyright: "© 2026 Foundry & Loop",
 } as const;
