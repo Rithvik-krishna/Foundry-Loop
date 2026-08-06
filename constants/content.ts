@@ -5,6 +5,10 @@ export const site = {
   description: "Foundry & Loop is a technology company building software that matters.",
   tagline: "Built with purpose.",
   email: "hello@foundryandloop.com",
+  social: {
+    linkedin: "https://www.linkedin.com/company/foundry-and-loop",
+    github: "https://github.com/Rithvik-krishna/Foundry-Loop",
+  },
   location: "Global / Remote-first",
   copyright: "© 2026 Foundry & Loop",
 } as const;
@@ -19,6 +23,7 @@ export const navigation = [
 export const pageMeta = {
   home: { title: "Built with purpose.", description: site.description },
   about: { title: "About", description: "Foundry & Loop builds companies through thoughtful products." },
+  howWeBuild: { title: "How we build", description: "The working principles behind Foundry & Loop products." },
   products: { title: "Products", description: "Purposeful AI, SaaS and developer products from Foundry & Loop." },
   news: { title: "News", description: "Updates, product notes and ideas from Foundry & Loop." },
   careers: { title: "Careers", description: "Help build thoughtful software that matters at Foundry & Loop." },
@@ -60,7 +65,7 @@ export const homeContent = {
     emphasis: "clear.",
     description: "Our best work sits at the intersection of deep technology and human simplicity. We obsess over the details that make powerful tools feel natural.",
     image: { src: "/images/collaboration.jpg", alt: "Two engineers collaborating around a laptop" },
-    cta: { label: "Our approach", href: "/about" },
+    cta: { label: "Our approach", href: "/how-we-build" },
     label: "Engineering for humans",
   },
   capabilities: [
@@ -68,6 +73,7 @@ export const homeContent = {
     { title: "Software systems", text: "Tools and infrastructure that turn complexity into momentum.", icon: "layers" },
     { title: "Future technologies", text: "Exploring the ideas that will define the next decade.", icon: "compass" },
   ],
+  capabilitiesCta: { label: "How we build", href: "/how-we-build" },
   vision: { eyebrow: "Our vision", title: "A world where", emphasis: "technology feels human.", description: "To become one of the world's most trusted technology companies by building software people genuinely love.", cta: { label: "Read our story", href: "/about" } },
   timeline: [
     { step: "The conviction", title: "Start with a meaningful problem.", text: "Every Foundry & Loop product begins with a question worth answering." },
@@ -116,7 +122,70 @@ export const pagesContent = {
       { number: "03", title: "Beautiful", text: "It respects people enough to make the details count." },
     ],
   },
-  news: { header: { eyebrow: "News & notes", title: "A quiet place for updates.", description: "Product launches, ideas we’re exploring and the occasional look behind the scenes. Check back soon." }, state: { eyebrow: "Coming soon", title: "We’ll have something", emphasis: "good to share.", description: "For now, follow along as we build.", cta: "Follow on LinkedIn" } },
+  howWeBuild: {
+    header: {
+      eyebrow: "How we build",
+      title: "A considered way of making things.",
+      description: "A working draft of the principles and practices that shape our products. This content is intentionally easy to replace when your final story is ready.",
+    },
+    introduction: {
+      eyebrow: "The approach",
+      title: "Start with the thing",
+      emphasis: "that matters.",
+      description: "We do not begin with a category, a trend or a feature list. We begin by understanding a real problem, then make the clearest useful response we can.",
+    },
+    principles: [
+      { number: "01", title: "Listen closely", text: "Spend time with the context before deciding what deserves to exist.", accent: "accent-blue" },
+      { number: "02", title: "Reduce the noise", text: "Turn complex systems into simple, calm experiences people can trust.", accent: "accent-purple" },
+      { number: "03", title: "Make the useful thing", text: "Focus the work until the product earns a place in someone’s day.", accent: "accent-green" },
+      { number: "04", title: "Keep the long view", text: "Improve with care, so every decision adds to a product that lasts.", accent: "accent-orange" },
+    ],
+    principlesHeader: { eyebrow: "Principles", title: "A point of view", emphasis: "you can feel." },
+    operatingModel: {
+      eyebrow: "The work in practice",
+      title: "Clarity from first question",
+      emphasis: "to lasting product.",
+      description: "The sequence is deliberately simple. Each stage gives the next one a stronger foundation — and leaves room to learn when the evidence changes.",
+      items: [
+        { step: "Discover", title: "Understand the real context.", text: "Explore the problem, the people around it and the outcomes that would make a genuine difference." },
+        { step: "Shape", title: "Choose the smallest clear idea.", text: "Turn what matters into a focused product direction, with the unnecessary parts left out." },
+        { step: "Build", title: "Sweat the meaningful details.", text: "Design and engineering move together to make each interaction feel considered and dependable." },
+        { step: "Learn", title: "Let the product keep teaching us.", text: "Use real feedback to improve with intent, not activity for its own sake." },
+      ],
+    },
+    note: {
+      eyebrow: "Replace when ready",
+      title: "A place for your real point of view.",
+      description: "This page uses placeholder copy only. When you have founder notes, product principles or an operating philosophy, replace the matching fields in constants/content.ts — the layout will stay intact.",
+      cta: { label: "See our products", href: "/products" },
+    },
+  },
+  news: {
+    header: {
+      eyebrow: "Journal",
+      title: "Notes from Foundry & Loop.",
+      description: "A considered space for ideas, progress and the thinking behind the work. The entries below are editable placeholder content for now.",
+    },
+    featured: {
+      eyebrow: "Sample journal entry",
+      date: "Placeholder / 2026",
+      title: "What we mean by building with purpose.",
+      description: "A short editorial placeholder about choosing problems carefully, doing the unglamorous work well and making technology earn its place.",
+      image: { src: "/images/technology.jpg", alt: "Abstract blue technology detail" },
+    },
+    articles: [
+      { category: "Product note", date: "Placeholder / 2026", title: "The quiet work behind a simple product.", description: "A placeholder for a future note on reducing complexity without reducing capability." },
+      { category: "Company note", date: "Placeholder / 2026", title: "Why we are building for the long term.", description: "A placeholder for the principles that guide product decisions when the obvious shortcut is not the right one." },
+      { category: "From the studio", date: "Placeholder / 2026", title: "Designing for trust, not just attention.", description: "A placeholder for a perspective on the role of craft, restraint and clarity in modern software." },
+    ],
+    listHeader: { eyebrow: "Latest notes", title: "A starting point for", emphasis: "the ideas ahead." },
+    archive: {
+      eyebrow: "More to come",
+      title: "The journal is just getting started.",
+      description: "Replace these sample entries with launch notes, essays, product updates or the occasional perspective from the people building the work.",
+      cta: "Follow on LinkedIn",
+    },
+  },
   careers: { header: { eyebrow: "Careers", title: "Do the best work of your life.", description: "We’re assembling a small, ambitious team to build products with purpose. If that sounds like you, we’d love to hear from you." }, culture: { eyebrow: "Why Foundry & Loop", title: "Work that feels", emphasis: "worth doing.", description: "We believe great teams are built on trust, autonomy and a shared standard for quality. You’ll have room to think deeply, move quickly and take real ownership.", perks: ["Small, senior teams", "Meaningful ownership", "Flexible by design"] }, roles: { eyebrow: "Open roles", title: "Nothing open", emphasis: "just yet.", description: "We’re not hiring for a specific role today, but we’re always open to thoughtful introductions.", cta: "Send an introduction" } },
   contact: { header: { eyebrow: "Contact", title: "Let’s make something useful.", description: "Have a problem worth solving, a product idea or simply want to say hello? We’d like to hear from you." }, title: "Good things", emphasis: "start with a note.", fields: { name: "Name", email: "Email", message: "How can we help?", namePlaceholder: "Your name", emailPlaceholder: "you@company.com", messagePlaceholder: "A few words about your idea…" } },
   privacy: { header: { eyebrow: "Legal", title: "Privacy, plainly stated.", description: "A short overview of how we think about the information you share with Foundry & Loop." } },
@@ -126,7 +195,7 @@ export const pagesContent = {
 export const footerContent = {
   statement: "Building software that matters.",
   contact: "Start a conversation",
-  explore: ["About", "Products", "News"],
+  explore: ["About", "How we build", "Products", "News"],
   company: ["Careers", "Contact"],
   elsewhere: ["LinkedIn", "GitHub"],
   note: "Purposeful technology for the long term.",

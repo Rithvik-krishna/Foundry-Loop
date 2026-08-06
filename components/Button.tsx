@@ -12,6 +12,6 @@ type Props = (ButtonHTMLAttributes<HTMLButtonElement> | AnchorHTMLAttributes<HTM
 export function Button({ className, variant = "primary", arrow = true, children, href, ...props }: Props) {
   const content = <>{children}{arrow && <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" />}</>;
   const classes = cn("button", `button-${variant}`, className);
-  if (href) return <Link href={href} className={classes}>{content}</Link>;
+  if (href) return <Link href={href} className={classes} {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}>{content}</Link>;
   return <button className={classes} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>{content}</button>;
 }

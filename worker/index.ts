@@ -3,9 +3,9 @@ import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } fr
 import handler from "vinext/server/app-router-entry";
 
 interface Env {
-  ASSETS: Fetcher;
-  DB: D1Database;
-  IMAGES: {
+  ASSETS?: Fetcher;
+  DB?: D1Database;
+  IMAGES?: {
     input(stream: ReadableStream): {
       transform(options: Record<string, unknown>): {
         output(options: { format: string; quality: number }): Promise<{ response(): Response }>;
@@ -30,17 +30,35 @@ const worker = {
     const url = new URL(request.url);
 
     if (url.pathname === "/_vinext/image") {
+      if (!env.ASSETS) {
+        return new Response("Image assets are unavailable.", { status: 503 });
+      }
+
+      const source = new URL(url.searchParams.get("url") ?? "", request.url);
+      if (source.origin !== url.origin) {
+        return new Response("Only local image assets may be optimized.", { status: 400 });
+      }
+
+      // The hosting control plane may omit the Cloudflare Images binding. In
+      // that case, retain a functional next/image response instead of failing
+      // every image request while still using optimization when available.
+      if (!env.IMAGES) {
+        return env.ASSETS.fetch(new Request(source, request));
+      }
+
+      const assets = env.ASSETS;
+      const images = env.IMAGES;
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
       return handleImageOptimization(request, {
-        fetchAsset: (path) => env.ASSETS.fetch(new Request(new URL(path, request.url))),
+        fetchAsset: (path) => assets.fetch(new Request(new URL(path, request.url))),
         transformImage: async (body, { width, format, quality }) => {
-          const result = await env.IMAGES.input(body).transform(width > 0 ? { width } : {}).output({ format, quality });
+          const result = await images.input(body).transform(width > 0 ? { width } : {}).output({ format, quality });
           return result.response();
         },
       }, allowedWidths);
     }
 
-    return handler.fetch(request, env, ctx);
+    return handler.fetch(request, env as Env & { ASSETS: Fetcher }, ctx);
   },
 };
 
