@@ -1,7 +1,7 @@
 export const site = {
   name: "Foundry & Loop",
   shortName: "Foundry & Loop",
-  url: "https://foundryandloop.com",
+  url: "https://foundrynloop.in",
   description: "Foundry & Loop is a technology company building software that matters.",
   tagline: "Built with purpose.",
   email: "contact@foundrynloop.in",
