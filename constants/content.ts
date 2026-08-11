@@ -2,7 +2,7 @@ export const site = {
   name: "Foundry & Loop",
   shortName: "Foundry & Loop",
   url: "https://foundrynloop.in",
-  description: "Foundry & Loop is an independent technology company building AI-powered software and SaaS products designed to solve real-world problems.",
+  description: "Foundry & Loop is an independent technology company building AI-powered software, SaaS products, and secure remote infrastructure designed to solve real-world problems.",
   tagline: "Building software that matters.",
   email: "contact@foundrynloop.in",
   location: "Global / Remote-first",
@@ -23,27 +23,27 @@ export const navigation = [
 export const pageMeta = {
   home: {
     title: "Foundry & Loop | Building Software That Matters",
-    description: "Foundry & Loop is an independent technology company building AI-powered software and SaaS products designed to solve real-world problems.",
+    description: "Foundry & Loop is an independent technology company building software and SaaS products designed to solve real-world problems.",
   },
   about: {
     title: "About Foundry & Loop | Independent Technology Company",
-    description: "Learn about Foundry & Loop, an independent technology company building AI-powered software and SaaS products focused on solving meaningful problems.",
+    description: "Learn about Foundry & Loop, an independent technology company building software and SaaS products focused on solving meaningful problems.",
   },
   products: {
     title: "Products | Foundry & Loop",
-    description: "Explore software and AI products built by Foundry & Loop, including tools and SaaS platforms designed to solve real-world problems.",
+    description: "Explore software and platforms built by Foundry & Loop, including tools and SaaS platforms designed to solve real-world problems.",
   },
   chameleon: {
-    title: "Chameleon | AI Agent Platform | Foundry & Loop",
-    description: "Chameleon is an AI-powered agent platform built by Foundry & Loop to help users automate tasks, interact with intelligent agents, and get more done with AI.",
+    title: "Chameleon | Secure Remote Access & Remote Desktop | Foundry & Loop",
+    description: "Chameleon is a secure remote access platform for controlling your computer from anywhere. Connect through encrypted peer-to-peer networking with QR-based pairing and low-latency streaming.",
   },
   news: {
     title: "News & Insights | Foundry & Loop",
-    description: "Product notes, articles, and insights from Foundry & Loop on AI software, SaaS, automation, and technology.",
+    description: "Product notes, articles, and insights from Foundry & Loop on software engineering, remote infrastructure, SaaS, and technology.",
   },
   careers: {
     title: "Careers at Foundry & Loop | Build the Future",
-    description: "Explore careers at Foundry & Loop and join a technology company building AI-powered software and SaaS products from the ground up.",
+    description: "Explore careers at Foundry & Loop and join an independent technology company building software and SaaS products from the ground up.",
   },
   contact: {
     title: "Contact Foundry & Loop | Get in Touch",
@@ -64,19 +64,19 @@ export const homeContent = {
     eyebrow: "Independent technology company",
     title: "Building software",
     emphasis: "that matters.",
-    description: "Foundry & Loop is an independent technology company building AI-powered software and SaaS products for modern businesses. We turn complex problems into purposeful, reliable products designed to make work simpler, faster, and more effective.",
+    description: "Foundry & Loop is an independent technology company building software and SaaS products for modern businesses. We turn complex problems into purposeful, reliable products designed to make work simpler, faster, and more effective.",
     image: { src: "/images/foundry-loop-hero.jpg", alt: "Foundry & Loop's blue sculptural loop artwork representing purposeful software craftsmanship" },
     primaryCta: { label: "Explore products", href: "/products" },
     secondaryCta: { label: "About us", href: "/about" },
     card: "Build with purpose",
     caption: "Where ideas become useful.",
   },
-  areas: ["Artificial intelligence", "Software", "Developer tools", "Future technologies"],
+  areas: ["Secure remote access", "Software systems", "SaaS platforms", "Emerging technologies"],
   intro: {
     eyebrow: "What we do",
     title: "We build technology",
     emphasis: "with purpose.",
-    description: "Foundry & Loop is an independent technology company focused on building software products that solve meaningful problems. From AI-powered applications to SaaS platforms, we design, develop, and scale products with a focus on usability, reliability, and long-term value.",
+    description: "Foundry & Loop is an independent technology company focused on building software products that solve meaningful problems. From secure remote access infrastructure to SaaS platforms, we design, develop, and scale products with a focus on usability, reliability, and long-term value.",
     cta: { label: "Meet Foundry & Loop", href: "/about" },
   },
   products: {
@@ -84,7 +84,7 @@ export const homeContent = {
     title: "Products built",
     emphasis: "to matter.",
     aside: "Ideas worth building are ideas worth building well.",
-    description: "We build and scale software products across artificial intelligence, SaaS, automation, and emerging technologies."
+    description: "We build and scale software products across secure remote access, SaaS, developer infrastructure, and emerging technologies."
   },
   values: [
     { number: "01", title: "Purpose", text: "Everything begins with solving a real problem.", accent: "accent-blue" },
@@ -102,9 +102,9 @@ export const homeContent = {
     label: "Engineering for humans",
   },
   capabilities: [
-    { title: "Artificial intelligence", text: "Intelligence that helps people do their best work.", icon: "brain" },
-    { title: "Software systems", text: "Tools and infrastructure that turn complexity into momentum.", icon: "layers" },
-    { title: "Future technologies", text: "Exploring the ideas that will define the next decade.", icon: "compass" },
+    { title: "Remote Infrastructure", text: "Secure, low-latency peer-to-peer connectivity platforms.", icon: "layers" },
+    { title: "Software Systems", text: "Tools and infrastructure that turn complexity into momentum.", icon: "brain" },
+    { title: "Future Technologies", text: "Exploring the ideas that will define the next decade.", icon: "compass" },
   ],
   vision: { eyebrow: "Our vision", title: "A world where", emphasis: "technology feels human.", description: "To become one of the world's most trusted technology companies by building software people genuinely love.", cta: { label: "Read our story", href: "/about" } },
   timeline: [
@@ -113,7 +113,7 @@ export const homeContent = {
     { step: "The horizon", title: "Build for the long term.", text: "A growing ecosystem of products that earn their place in people’s lives." },
   ],
   stats: [
-    { value: "01", label: "product in the world", detail: "Chameleon" },
+    { value: "01", label: "product in market", detail: "Chameleon" },
     { value: "∞", label: "problems worth solving", detail: "Always looking" },
     { value: "100%", label: "built with purpose", detail: "No shortcuts" },
   ],
@@ -124,18 +124,25 @@ export const chameleon = {
   slug: "chameleon",
   eyebrow: "Product / 01",
   name: "Chameleon",
-  title: "Chameleon | AI Agent Platform | Foundry & Loop",
-  description: "Chameleon is an AI-powered agent platform built by Foundry & Loop to help users automate tasks, interact with intelligent agents, and get more done with AI.",
-  lead: "AI-powered conversational experiences and autonomous agent workflows for modern businesses.",
-  image: { src: "/images/chameleon-art.jpg", alt: "Original Chameleon product artwork by Foundry & Loop" },
+  subtitle: "Secure Remote Access Platform",
+  title: "Chameleon | Secure Remote Access & Remote Desktop | Foundry & Loop",
+  description: "Control your computer from anywhere through a secure, low-latency peer-to-peer connection. Pair instantly with a QR code and connect without complicated network configuration.",
+  lead: "Chameleon gives you secure, low-latency control of your computer from anywhere. Connect in seconds using QR-based pairing, with encrypted peer-to-peer communication and no IP addresses to configure.",
+  image: { src: "/images/chameleon-art.jpg", alt: "Chameleon Secure Remote Access Platform artwork by Foundry & Loop" },
   action: { label: "Explore Chameleon", href: "/products/chameleon" },
-  category: "Artificial Intelligence",
-  status: "In Development",
+  category: "Secure Remote Access · Remote Desktop · P2P Connectivity",
+  status: "Active Release",
   href: "/products/chameleon",
+  externalUrl: "https://www.chameleon-agent.online",
   features: [
-    { title: "Autonomous Workflows", text: "Intelligent agents that execute multi-step business tasks with precision." },
-    { title: "Context-Aware Intelligence", text: "Adapts dynamically to conversation tone, business domain, and user intent." },
-    { title: "Enterprise Reliability", text: "Built with high uptime, audit trails, and strict data privacy standards." }
+    { title: "QR Instant Pairing", text: "Connect devices without entering IP addresses, configuring ports, or manually exchanging credentials using ephemeral pairing tokens." },
+    { title: "End-to-End Encryption", text: "Remote sessions are protected using WebRTC security mechanisms (DTLS/SRTP) for video, audio, and input data." },
+    { title: "Peer-to-Peer Architecture", text: "Direct P2P connectivity without routing your remote desktop session through centralized cloud relay bottlenecks." },
+    { title: "Ultra-Low Latency", text: "Optimized for responsive remote control using direct UDP streaming and hardware-accelerated video encoding." },
+    { title: "Clipboard Sync", text: "Copy and paste text seamlessly across connected devices through WebRTC DataChannels." },
+    { title: "Adaptive Bitrate", text: "Dynamically adjusts streaming characteristics when network conditions change to maintain session quality." },
+    { title: "Hardware Encoding", text: "Utilizes NVENC/QuickSync hardware acceleration where available to reduce CPU overhead." },
+    { title: "60 FPS Remote Streaming", text: "Targets a stable 60 FPS remote desktop experience with input throttling and WebRTC optimization." }
   ]
 } as const;
 
@@ -143,44 +150,43 @@ export const articles = [
   {
     slug: "how-ai-agents-are-changing-business-workflows",
     title: "How AI Agents Are Changing Business Workflows",
-    description: "An in-depth look at how autonomous AI agents are moving beyond chat to execute complex end-to-end business workflows.",
+    description: "An in-depth look at how autonomous AI systems and tools are moving beyond chat to execute complex end-to-end workflows.",
     date: "2026-08-01",
     author: "Foundry & Loop Team",
-    category: "AI & Automation",
+    category: "Automation & Infrastructure",
     readTime: "5 min read",
     content: [
-      "Artificial intelligence is undergoing a fundamental shift from reactive chat interfaces to proactive autonomous agents.",
-      "Rather than simply answering questions, modern AI agents observe state, make multi-step decisions, and call tools to complete actual business tasks.",
-      "At Foundry & Loop, we build software like Chameleon around this exact paradigm: empowering teams to delegate repetitive operations to reliable software systems.",
-      "As businesses integrate intelligent agents into their daily operations, the focus moves from prompt engineering to system reliability, context preservation, and security."
+      "Software is undergoing a fundamental shift from static tools to responsive, automated execution systems.",
+      "Rather than manually configuring networks, IP addresses, or complex setups, modern software observes state and executes seamless connections.",
+      "At Foundry & Loop, we build software like Chameleon around this exact paradigm: empowering users and teams to connect and operate without friction."
     ]
   },
   {
-    slug: "building-ai-products-that-people-actually-use",
-    title: "Building AI Products That People Actually Use",
-    description: "Why usability, simplicity, and trust matter more than raw parameter count when creating enduring AI software.",
+    slug: "building-software-that-people-actually-use",
+    title: "Building Software That People Actually Use",
+    description: "Why usability, simplicity, and security matter more than unnecessary complexity when creating enduring software products.",
     date: "2026-07-15",
     author: "Foundry & Loop Team",
     category: "Product Design",
     readTime: "4 min read",
     content: [
-      "The most common failure mode in modern AI software is prioritizing technical novelty over human utility.",
-      "Great software feels effortless. When AI is integrated thoughtfully, the technology disappears into the background while the user gets momentum.",
+      "The most common failure mode in modern software is prioritizing technical bloat over human utility.",
+      "Great software feels effortless. When complex networking or security is handled thoughtfully, the infrastructure disappears into the background while the user gets momentum.",
       "Our product engineering philosophy centers on craftsmanship, fast feedback loops, and long-term durability over short-lived trends."
     ]
   },
   {
-    slug: "what-is-an-ai-agent",
-    title: "What Is an AI Agent? A Plain-English Explanation",
-    description: "Understanding the difference between large language models, chatbots, and true autonomous AI agents.",
+    slug: "the-future-of-secure-remote-access",
+    title: "The Future of Secure Remote Access & P2P Networking",
+    description: "How peer-to-peer WebRTC connections, ephemeral QR pairing, and end-to-end encryption are redefining remote desktop access.",
     date: "2026-06-28",
     author: "Foundry & Loop Team",
-    category: "AI Foundations",
+    category: "Remote Infrastructure",
     readTime: "6 min read",
     content: [
-      "To understand AI agents, it helps to distinguish them from basic language models.",
-      "A language model predicts the next token. A chatbot formats text. An AI agent, by contrast, possesses goal perception, memory, tool access, and an execution loop.",
-      "This distinction transforms AI from a novel drafting tool into core enterprise infrastructure."
+      "Traditional remote desktop access required static IP addresses, port forwarding, or heavy cloud relays that compromised both latency and privacy.",
+      "By combining WebRTC DTLS/SRTP encryption with ephemeral QR-based token pairing, modern remote access can occur directly peer-to-peer between devices.",
+      "This architecture eliminates central cloud relay bottlenecks and provides responsive, low-latency control with zero network exposure."
     ]
   },
   {
@@ -193,8 +199,8 @@ export const articles = [
     readTime: "5 min read",
     content: [
       "Traditional business automation relied on rigid, rule-based scripts that broke whenever inputs deviated slightly.",
-      "The next decade of SaaS belongs to adaptive software systems that handle edge cases gracefully.",
-      "By combining flexible AI reasoning with deterministic software APIs, modern businesses can achieve true operational momentum."
+      "The next decade belongs to adaptive software systems that handle edge cases gracefully.",
+      "By combining flexible software reasoning with deterministic APIs, modern businesses can achieve true operational momentum."
     ]
   }
 ] as const;
@@ -204,7 +210,7 @@ export const pagesContent = {
     header: {
       eyebrow: "About Foundry & Loop",
       title: "We build technology with purpose.",
-      description: "Foundry & Loop is an independent technology company focused on building software products that solve meaningful problems. From AI-powered applications to SaaS platforms, we design, develop, and scale products with a focus on usability, reliability, and long-term value."
+      description: "Foundry & Loop is an independent technology company focused on building software products that solve meaningful problems. From secure remote access tools to SaaS platforms, we design, develop, and scale products with a focus on usability, reliability, and long-term value."
     },
     image: { src: "/images/collaboration.jpg", alt: "Foundry & Loop team collaborating on software product design" },
     belief: "Great technology disappears into the way people live and work.",
@@ -213,7 +219,7 @@ export const pagesContent = {
       title: "Build technology",
       emphasis: "that is useful.",
       lead: "Purposeful, accessible, and made to last.",
-      description: "Our products are built independently under the Foundry & Loop ecosystem, with each product designed around a specific problem, audience, and opportunity. From AI-powered conversational tools to SaaS platforms, we make software that matters.",
+      description: "Our products are built independently under the Foundry & Loop ecosystem, with each product designed around a specific problem, audience, and opportunity. From secure remote access infrastructure to SaaS platforms, we make software that matters.",
       cta: { label: "See what we’re building", href: "/products" }
     },
     values: [
@@ -229,13 +235,13 @@ export const pagesContent = {
     header: {
       eyebrow: "Products",
       title: "Products built to matter.",
-      description: "Explore software and AI products built by Foundry & Loop, including tools and SaaS platforms designed to solve real-world problems."
+      description: "Explore software and platforms built by Foundry & Loop, including tools and platforms designed to solve real-world problems."
     },
     coming: {
       eyebrow: "The next chapter",
       title: "More good ideas",
       emphasis: "in progress.",
-      description: "We’re exploring new products across AI, SaaS, automation and developer tools. The work is quiet for now. The ambition is not."
+      description: "We’re exploring new products across secure infrastructure, SaaS, and developer tools. The work is quiet for now. The ambition is not."
     },
     principles: [
       { number: "01", title: "Meaningful", text: "It solves a problem that matters to someone." },
@@ -247,13 +253,13 @@ export const pagesContent = {
     header: {
       eyebrow: "News & Insights",
       title: "A place for ideas and updates.",
-      description: "Product launches, articles on AI software, SaaS trends, and thoughts on building software that matters."
+      description: "Product launches, articles on software engineering, remote infrastructure, SaaS trends, and thoughts on building software that matters."
     },
     state: {
       eyebrow: "Insights & Articles",
       title: "Thoughts on software,",
-      emphasis: "AI & building.",
-      description: "Read our latest articles on AI agents, product craftsmanship, and modern business software.",
+      emphasis: "infrastructure & building.",
+      description: "Read our latest articles on remote desktop technology, product craftsmanship, and modern software platforms.",
       cta: "Explore articles below"
     }
   },
@@ -261,7 +267,7 @@ export const pagesContent = {
     header: {
       eyebrow: "Careers",
       title: "Do the best work of your life.",
-      description: "Explore careers at Foundry & Loop and join a technology company building AI-powered software and SaaS products from the ground up."
+      description: "Explore careers at Foundry & Loop and join an independent technology company building software and SaaS products from the ground up."
     },
     culture: {
       eyebrow: "Why Foundry & Loop",
