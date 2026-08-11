@@ -9,16 +9,16 @@ export function BrandLogo({ dark = false }: { dark?: boolean }) {
         className="brand-logo-image brand-logo-image-light"
         src="/logo-light.svg"
         alt={site.name}
-        width={195}
-        height={32}
+        width={205}
+        height={45}
         priority
       />
       <Image
         className="brand-logo-image brand-logo-image-dark"
         src="/logo-dark.svg"
         alt={site.name}
-        width={195}
-        height={32}
+        width={205}
+        height={45}
         priority
       />
     </Link>

@@ -41,7 +41,7 @@ button { cursor: pointer; }
 
 /* Brand */
 .brand-logo { display: inline-flex; align-items: center; position: relative; z-index: 2; text-decoration: none; }
-.brand-logo-image { display: block; height: 32px; width: auto; max-width: 195px; border: 0; background: transparent; }
+.brand-logo-image { display: block; height: 36px; width: auto; max-width: 205px; border: 0; background: transparent; }
 .brand-logo-image-dark { display: none; }
 .brand-logo-image-light { display: block; }
 
