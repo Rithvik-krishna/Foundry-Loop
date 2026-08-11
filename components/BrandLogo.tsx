@@ -9,7 +9,7 @@ export function BrandLogo({ dark = false }: { dark?: boolean }) {
         className="brand-logo-image brand-logo-image-light"
         src="/logo-light.png"
         alt={site.name}
-        width={200}
+        width={227}
         height={41}
         priority
         unoptimized
@@ -18,8 +18,8 @@ export function BrandLogo({ dark = false }: { dark?: boolean }) {
         className="brand-logo-image brand-logo-image-dark"
         src="/logo-dark.png"
         alt={site.name}
-        width={212}
-        height={38}
+        width={262}
+        height={50}
         priority
         unoptimized
       />
