@@ -2,11 +2,15 @@ export const site = {
   name: "Foundry & Loop",
   shortName: "Foundry & Loop",
   url: "https://foundrynloop.in",
-  description: "Foundry & Loop is a technology company building software that matters.",
-  tagline: "Built with purpose.",
+  description: "Foundry & Loop is an independent technology company building AI-powered software and SaaS products designed to solve real-world problems.",
+  tagline: "Building software that matters.",
   email: "contact@foundrynloop.in",
   location: "Global / Remote-first",
   copyright: "© 2026 Foundry & Loop",
+  socials: {
+    linkedin: "https://www.linkedin.com/company/foundrynloop/",
+    github: "https://github.com/Rithvik-krishna/Foundry-Loop",
+  },
 } as const;
 
 export const navigation = [
@@ -17,14 +21,42 @@ export const navigation = [
 ] as const;
 
 export const pageMeta = {
-  home: { title: "Built with purpose.", description: site.description },
-  about: { title: "About", description: "Foundry & Loop builds companies through thoughtful products." },
-  products: { title: "Products", description: "Purposeful AI, SaaS and developer products from Foundry & Loop." },
-  news: { title: "News", description: "Updates, product notes and ideas from Foundry & Loop." },
-  careers: { title: "Careers", description: "Help build thoughtful software that matters at Foundry & Loop." },
-  contact: { title: "Contact", description: "Start a conversation with Foundry & Loop." },
-  privacy: { title: "Privacy", description: "The Foundry & Loop privacy policy." },
-  terms: { title: "Terms", description: "The Foundry & Loop terms of use." },
+  home: {
+    title: "Foundry & Loop | Building Software That Matters",
+    description: "Foundry & Loop is an independent technology company building AI-powered software and SaaS products designed to solve real-world problems.",
+  },
+  about: {
+    title: "About Foundry & Loop | Independent Technology Company",
+    description: "Learn about Foundry & Loop, an independent technology company building AI-powered software and SaaS products focused on solving meaningful problems.",
+  },
+  products: {
+    title: "Products | Foundry & Loop",
+    description: "Explore software and AI products built by Foundry & Loop, including tools and SaaS platforms designed to solve real-world problems.",
+  },
+  chameleon: {
+    title: "Chameleon | AI Agent Platform | Foundry & Loop",
+    description: "Chameleon is an AI-powered agent platform built by Foundry & Loop to help users automate tasks, interact with intelligent agents, and get more done with AI.",
+  },
+  news: {
+    title: "News & Insights | Foundry & Loop",
+    description: "Product notes, articles, and insights from Foundry & Loop on AI software, SaaS, automation, and technology.",
+  },
+  careers: {
+    title: "Careers at Foundry & Loop | Build the Future",
+    description: "Explore careers at Foundry & Loop and join a technology company building AI-powered software and SaaS products from the ground up.",
+  },
+  contact: {
+    title: "Contact Foundry & Loop | Get in Touch",
+    description: "Get in touch with Foundry & Loop about our products, partnerships, careers, business opportunities, or other inquiries.",
+  },
+  privacy: {
+    title: "Privacy Policy | Foundry & Loop",
+    description: "Learn how Foundry & Loop handles information and protects your privacy.",
+  },
+  terms: {
+    title: "Terms of Use | Foundry & Loop",
+    description: "The terms of use for spending time with Foundry & Loop online.",
+  },
 } as const;
 
 export const homeContent = {
@@ -32,8 +64,8 @@ export const homeContent = {
     eyebrow: "Independent technology company",
     title: "Building software",
     emphasis: "that matters.",
-    description: "Foundry & Loop is a technology company that designs, builds and scales software products across artificial intelligence, SaaS, developer tools and future technologies.",
-    image: { src: "/images/foundry-loop-hero.jpg", alt: "Foundry & Loop's blue sculptural loop artwork" },
+    description: "Foundry & Loop is an independent technology company building AI-powered software and SaaS products for modern businesses. We turn complex problems into purposeful, reliable products designed to make work simpler, faster, and more effective.",
+    image: { src: "/images/foundry-loop-hero.jpg", alt: "Foundry & Loop's blue sculptural loop artwork representing purposeful software craftsmanship" },
     primaryCta: { label: "Explore products", href: "/products" },
     secondaryCta: { label: "About us", href: "/about" },
     card: "Build with purpose",
@@ -42,12 +74,18 @@ export const homeContent = {
   areas: ["Artificial intelligence", "Software", "Developer tools", "Future technologies"],
   intro: {
     eyebrow: "What we do",
-    title: "We build companies",
-    emphasis: "through products.",
-    description: "Instead of focusing on one application, we create an ecosystem of thoughtful software designed to solve meaningful problems. Each product is built with careful engineering, exceptional design and long-term thinking.",
+    title: "We build technology",
+    emphasis: "with purpose.",
+    description: "Foundry & Loop is an independent technology company focused on building software products that solve meaningful problems. From AI-powered applications to SaaS platforms, we design, develop, and scale products with a focus on usability, reliability, and long-term value.",
     cta: { label: "Meet Foundry & Loop", href: "/about" },
   },
-  products: { eyebrow: "Our products", title: "One ecosystem.", emphasis: "Many possibilities.", aside: "Ideas worth building are ideas worth building well." },
+  products: {
+    eyebrow: "Our products",
+    title: "Products built",
+    emphasis: "to matter.",
+    aside: "Ideas worth building are ideas worth building well.",
+    description: "We build and scale software products across artificial intelligence, SaaS, automation, and emerging technologies."
+  },
   values: [
     { number: "01", title: "Purpose", text: "Everything begins with solving a real problem.", accent: "accent-blue" },
     { number: "02", title: "Simplicity", text: "Technology should feel effortless to use.", accent: "accent-purple" },
@@ -59,7 +97,7 @@ export const homeContent = {
     title: "Make the complex feel",
     emphasis: "clear.",
     description: "Our best work sits at the intersection of deep technology and human simplicity. We obsess over the details that make powerful tools feel natural.",
-    image: { src: "/images/collaboration.jpg", alt: "Two engineers collaborating around a laptop" },
+    image: { src: "/images/collaboration.jpg", alt: "Engineers collaborating around software product architecture at Foundry & Loop" },
     cta: { label: "Our approach", href: "/about" },
     label: "Engineering for humans",
   },
@@ -83,21 +121,101 @@ export const homeContent = {
 } as const;
 
 export const chameleon = {
+  slug: "chameleon",
   eyebrow: "Product / 01",
   name: "Chameleon",
-  description: "AI-powered conversational experiences for modern businesses.",
-  image: { src: "/images/chameleon-art.jpg", alt: "Original Chameleon product artwork: an adaptive chameleon-inspired symbol around a display" },
-  action: { label: "Explore Chameleon", href: "/products" },
-  category: "Artificial intelligence",
-  status: "In development",
+  title: "Chameleon | AI Agent Platform | Foundry & Loop",
+  description: "Chameleon is an AI-powered agent platform built by Foundry & Loop to help users automate tasks, interact with intelligent agents, and get more done with AI.",
+  lead: "AI-powered conversational experiences and autonomous agent workflows for modern businesses.",
+  image: { src: "/images/chameleon-art.jpg", alt: "Original Chameleon product artwork by Foundry & Loop" },
+  action: { label: "Explore Chameleon", href: "/products/chameleon" },
+  category: "Artificial Intelligence",
+  status: "In Development",
+  href: "/products/chameleon",
+  features: [
+    { title: "Autonomous Workflows", text: "Intelligent agents that execute multi-step business tasks with precision." },
+    { title: "Context-Aware Intelligence", text: "Adapts dynamically to conversation tone, business domain, and user intent." },
+    { title: "Enterprise Reliability", text: "Built with high uptime, audit trails, and strict data privacy standards." }
+  ]
 } as const;
+
+export const articles = [
+  {
+    slug: "how-ai-agents-are-changing-business-workflows",
+    title: "How AI Agents Are Changing Business Workflows",
+    description: "An in-depth look at how autonomous AI agents are moving beyond chat to execute complex end-to-end business workflows.",
+    date: "2026-08-01",
+    author: "Foundry & Loop Team",
+    category: "AI & Automation",
+    readTime: "5 min read",
+    content: [
+      "Artificial intelligence is undergoing a fundamental shift from reactive chat interfaces to proactive autonomous agents.",
+      "Rather than simply answering questions, modern AI agents observe state, make multi-step decisions, and call tools to complete actual business tasks.",
+      "At Foundry & Loop, we build software like Chameleon around this exact paradigm: empowering teams to delegate repetitive operations to reliable software systems.",
+      "As businesses integrate intelligent agents into their daily operations, the focus moves from prompt engineering to system reliability, context preservation, and security."
+    ]
+  },
+  {
+    slug: "building-ai-products-that-people-actually-use",
+    title: "Building AI Products That People Actually Use",
+    description: "Why usability, simplicity, and trust matter more than raw parameter count when creating enduring AI software.",
+    date: "2026-07-15",
+    author: "Foundry & Loop Team",
+    category: "Product Design",
+    readTime: "4 min read",
+    content: [
+      "The most common failure mode in modern AI software is prioritizing technical novelty over human utility.",
+      "Great software feels effortless. When AI is integrated thoughtfully, the technology disappears into the background while the user gets momentum.",
+      "Our product engineering philosophy centers on craftsmanship, fast feedback loops, and long-term durability over short-lived trends."
+    ]
+  },
+  {
+    slug: "what-is-an-ai-agent",
+    title: "What Is an AI Agent? A Plain-English Explanation",
+    description: "Understanding the difference between large language models, chatbots, and true autonomous AI agents.",
+    date: "2026-06-28",
+    author: "Foundry & Loop Team",
+    category: "AI Foundations",
+    readTime: "6 min read",
+    content: [
+      "To understand AI agents, it helps to distinguish them from basic language models.",
+      "A language model predicts the next token. A chatbot formats text. An AI agent, by contrast, possesses goal perception, memory, tool access, and an execution loop.",
+      "This distinction transforms AI from a novel drafting tool into core enterprise infrastructure."
+    ]
+  },
+  {
+    slug: "the-future-of-business-automation",
+    title: "The Future of Business Automation",
+    description: "How SaaS platforms and intelligent systems are combining to create frictionless operations for modern companies.",
+    date: "2026-06-10",
+    author: "Foundry & Loop Team",
+    category: "SaaS Trends",
+    readTime: "5 min read",
+    content: [
+      "Traditional business automation relied on rigid, rule-based scripts that broke whenever inputs deviated slightly.",
+      "The next decade of SaaS belongs to adaptive software systems that handle edge cases gracefully.",
+      "By combining flexible AI reasoning with deterministic software APIs, modern businesses can achieve true operational momentum."
+    ]
+  }
+] as const;
 
 export const pagesContent = {
   about: {
-    header: { eyebrow: "About Foundry & Loop", title: "Technology with a point of view.", description: "Foundry & Loop builds companies through products. We make thoughtful software for meaningful problems — and take the long view on both." },
-    image: { src: "/images/collaboration.jpg", alt: "Team collaborating in a bright studio" },
+    header: {
+      eyebrow: "About Foundry & Loop",
+      title: "We build technology with purpose.",
+      description: "Foundry & Loop is an independent technology company focused on building software products that solve meaningful problems. From AI-powered applications to SaaS platforms, we design, develop, and scale products with a focus on usability, reliability, and long-term value."
+    },
+    image: { src: "/images/collaboration.jpg", alt: "Foundry & Loop team collaborating on software product design" },
     belief: "Great technology disappears into the way people live and work.",
-    mission: { eyebrow: "Mission", title: "Build technology", emphasis: "that is useful.", lead: "Purposeful, accessible, and made to last.", description: "We are building an ecosystem of AI and SaaS products used around the world. Not for the sake of more software, but to make the important things easier, clearer and more human.", cta: { label: "See what we’re building", href: "/products" } },
+    mission: {
+      eyebrow: "Mission",
+      title: "Build technology",
+      emphasis: "that is useful.",
+      lead: "Purposeful, accessible, and made to last.",
+      description: "Our products are built independently under the Foundry & Loop ecosystem, with each product designed around a specific problem, audience, and opportunity. From AI-powered conversational tools to SaaS platforms, we make software that matters.",
+      cta: { label: "See what we’re building", href: "/products" }
+    },
     values: [
       { number: "01", title: "Purpose", text: "Everything begins with solving a real problem.", accent: "accent-blue" },
       { number: "02", title: "Quality", text: "Craftsmanship over speed. Details compound.", accent: "accent-green" },
@@ -108,19 +226,89 @@ export const pagesContent = {
     culture: ["Curiosity", "Ownership", "Craftsmanship", "Continuous learning"],
   },
   products: {
-    header: { eyebrow: "Products", title: "Useful by design.", description: "We build products for the moments where technology can make a real difference. One thoughtful release at a time." },
-    coming: { eyebrow: "The next chapter", title: "More good ideas", emphasis: "in progress.", description: "We’re exploring new products across AI, SaaS and developer tools. The work is quiet for now. The ambition is not." },
+    header: {
+      eyebrow: "Products",
+      title: "Products built to matter.",
+      description: "Explore software and AI products built by Foundry & Loop, including tools and SaaS platforms designed to solve real-world problems."
+    },
+    coming: {
+      eyebrow: "The next chapter",
+      title: "More good ideas",
+      emphasis: "in progress.",
+      description: "We’re exploring new products across AI, SaaS, automation and developer tools. The work is quiet for now. The ambition is not."
+    },
     principles: [
       { number: "01", title: "Meaningful", text: "It solves a problem that matters to someone." },
       { number: "02", title: "Durable", text: "It compounds value over time, not attention." },
       { number: "03", title: "Beautiful", text: "It respects people enough to make the details count." },
     ],
   },
-  news: { header: { eyebrow: "News & notes", title: "A quiet place for updates.", description: "Product launches, ideas we’re exploring and the occasional look behind the scenes. Check back soon." }, state: { eyebrow: "Coming soon", title: "We’ll have something", emphasis: "good to share.", description: "For now, follow along as we build.", cta: "Follow on LinkedIn" } },
-  careers: { header: { eyebrow: "Careers", title: "Do the best work of your life.", description: "We’re assembling a small, ambitious team to build products with purpose. If that sounds like you, we’d love to hear from you." }, culture: { eyebrow: "Why Foundry & Loop", title: "Work that feels", emphasis: "worth doing.", description: "We believe great teams are built on trust, autonomy and a shared standard for quality. You’ll have room to think deeply, move quickly and take real ownership.", perks: ["Small, senior teams", "Meaningful ownership", "Flexible by design"] }, roles: { eyebrow: "Open roles", title: "Nothing open", emphasis: "just yet.", description: "We’re not hiring for a specific role today, but we’re always open to thoughtful introductions.", cta: "Send an introduction" } },
-  contact: { header: { eyebrow: "Contact", title: "Let’s make something useful.", description: "Have a problem worth solving, a product idea or simply want to say hello? We’d like to hear from you." }, title: "Good things", emphasis: "start with a note.", fields: { name: "Name", email: "Email", message: "How can we help?", namePlaceholder: "Your name", emailPlaceholder: "you@company.com", messagePlaceholder: "A few words about your idea…" } },
-  privacy: { header: { eyebrow: "Legal", title: "Privacy, plainly stated.", description: "A short overview of how we think about the information you share with Foundry & Loop." } },
-  terms: { header: { eyebrow: "Legal", title: "Terms of use.", description: "The simple rules for spending time with Foundry & Loop online." } },
+  news: {
+    header: {
+      eyebrow: "News & Insights",
+      title: "A place for ideas and updates.",
+      description: "Product launches, articles on AI software, SaaS trends, and thoughts on building software that matters."
+    },
+    state: {
+      eyebrow: "Insights & Articles",
+      title: "Thoughts on software,",
+      emphasis: "AI & building.",
+      description: "Read our latest articles on AI agents, product craftsmanship, and modern business software.",
+      cta: "Explore articles below"
+    }
+  },
+  careers: {
+    header: {
+      eyebrow: "Careers",
+      title: "Do the best work of your life.",
+      description: "Explore careers at Foundry & Loop and join a technology company building AI-powered software and SaaS products from the ground up."
+    },
+    culture: {
+      eyebrow: "Why Foundry & Loop",
+      title: "Work that feels",
+      emphasis: "worth doing.",
+      description: "We believe great teams are built on trust, autonomy and a shared standard for quality. You’ll have room to think deeply, move quickly and take real ownership.",
+      perks: ["Small, senior teams", "Meaningful ownership", "Flexible by design"]
+    },
+    roles: {
+      eyebrow: "Open roles",
+      title: "Nothing open",
+      emphasis: "just yet.",
+      description: "We’re not hiring for a specific role today, but we’re always open to thoughtful introductions.",
+      cta: "Send an introduction"
+    }
+  },
+  contact: {
+    header: {
+      eyebrow: "Contact",
+      title: "Contact Foundry & Loop",
+      description: "Get in touch with Foundry & Loop about our products, partnerships, careers, business opportunities, or other inquiries."
+    },
+    title: "Good things",
+    emphasis: "start with a note.",
+    fields: {
+      name: "Name",
+      email: "Email",
+      message: "How can we help?",
+      namePlaceholder: "Your name",
+      emailPlaceholder: "you@company.com",
+      messagePlaceholder: "A few words about your idea…"
+    }
+  },
+  privacy: {
+    header: {
+      eyebrow: "Legal",
+      title: "Privacy, plainly stated.",
+      description: "A short overview of how we think about the information you share with Foundry & Loop."
+    }
+  },
+  terms: {
+    header: {
+      eyebrow: "Legal",
+      title: "Terms of use.",
+      description: "The simple rules for spending time with Foundry & Loop online."
+    }
+  },
 } as const;
 
 export const footerContent = {
@@ -128,7 +316,7 @@ export const footerContent = {
   contact: "Start a conversation",
   explore: ["About", "Products", "News"],
   company: ["Careers", "Contact"],
-  elsewhere: ["LinkedIn", "GitHub"],
+  elsewhere: ["LinkedIn"],
   note: "Purposeful technology for the long term.",
   legal: ["Privacy", "Terms"],
 } as const;

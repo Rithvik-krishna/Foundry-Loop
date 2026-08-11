@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { pageMeta, site } from "../constants/content";
 import { createMetadata } from "../lib/seo";
+import { OrganizationJsonLd, WebSiteJsonLd } from "../components/JsonLd";
 
 const inter = localFont({
   src: "./fonts/Inter-Variable.woff2",
@@ -13,17 +14,39 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  ...createMetadata(pageMeta.home.title, pageMeta.home.description),
-  keywords: [site.name, "technology company", "artificial intelligence", "software products"],
+  ...createMetadata({
+    title: pageMeta.home.title,
+    description: pageMeta.home.description,
+  }),
+  keywords: [
+    site.name,
+    "Foundry and Loop",
+    "software company",
+    "technology company",
+    "SaaS company",
+    "AI software company",
+    "AI products",
+    "SaaS products",
+    "business software",
+    "artificial intelligence",
+  ],
   icons: { icon: "/favicon.png", shortcut: "/favicon.png", apple: "/favicon.png" },
 };
 
-export const viewport: Viewport = { colorScheme: "light dark", themeColor: [{ media: "(prefers-color-scheme: light)", color: "#fbfcfe" }, { media: "(prefers-color-scheme: dark)", color: "#0b0f1c" }] };
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fbfcfe" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0f1c" },
+  ],
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
         <script
           dangerouslySetInnerHTML={{
             __html: `try{if(localStorage.getItem('foundry-theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}`,

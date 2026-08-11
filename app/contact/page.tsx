@@ -1,14 +1,60 @@
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
-import { Button } from "../../components/Button";
+import type { Metadata } from "next";
+import { Mail, MapPin } from "lucide-react";
+import { ContactForm } from "../../components/ContactForm";
 import { Container } from "../../components/Container";
 import { Footer } from "../../components/Footer";
 import { Navbar } from "../../components/Navbar";
 import { PageHeader } from "../../components/PageHeader";
 import { Section } from "../../components/Section";
-import { pageMeta } from "../../constants/content";
+import { pageMeta, site } from "../../constants/content";
 import { createMetadata } from "../../lib/seo";
 
-export const metadata: Metadata = createMetadata(pageMeta.contact.title, pageMeta.contact.description);
+export const metadata: Metadata = createMetadata({
+  title: pageMeta.contact.title,
+  description: pageMeta.contact.description,
+  path: "/contact",
+});
 
-export default function ContactPage() { return <><Navbar /><main><PageHeader eyebrow="Contact" title="Let’s make something useful." description="Have a problem worth solving, a product idea or simply want to say hello? We’d like to hear from you." /><Section className="contact-section"><Container><div className="contact-grid"><div className="contact-details"><p className="eyebrow">Start a conversation</p><h2>Good things<br /><span>start with a note.</span></h2><a href="mailto:contact@foundrynloop.in" className="contact-email">contact@foundrynloop.in <ArrowUpRight size={19} /></a><div className="contact-meta"><span><Mail size={17} /> contact@foundrynloop.in</span><span><MapPin size={17} /> Global / Remote-first</span></div></div><form className="contact-form" action="mailto:contact@foundrynloop.in" method="post" encType="text/plain"><label>Name<input required name="name" placeholder="Your name" /></label><label>Email<input required type="email" name="email" placeholder="you@company.com" /></label><label>How can we help?<textarea required name="message" rows={5} placeholder="A few words about your idea…" /></label><Button arrow>Send message</Button><p className="form-note">This opens your email client with the message ready to send.</p></form></div></Container></Section></main><Footer /></> }
-import type { Metadata } from "next";
+export default function ContactPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <PageHeader
+          eyebrow="Contact"
+          title="Contact Foundry & Loop"
+          description="Get in touch with Foundry & Loop about our products, partnerships, careers, business opportunities, or other inquiries."
+        />
+        <Section className="contact-section">
+          <Container>
+            <div className="contact-grid">
+              <div className="contact-details">
+                <h2>
+                  Good things
+                  <br />
+                  <span>start with a note.</span>
+                </h2>
+                <div className="contact-item">
+                  <Mail size={20} />
+                  <div>
+                    <span className="label">Email</span>
+                    <a href={`mailto:${site.email}`}>{site.email}</a>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <MapPin size={20} />
+                  <div>
+                    <span className="label">Location</span>
+                    <p>{site.location}</p>
+                  </div>
+                </div>
+              </div>
+              <ContactForm />
+            </div>
+          </Container>
+        </Section>
+      </main>
+      <Footer />
+    </>
+  );
+}
