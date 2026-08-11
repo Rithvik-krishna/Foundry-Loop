@@ -17,8 +17,11 @@ export function Navbar() {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    const saved = localStorage.getItem("foundry-theme");
-    if (saved === "dark") { document.documentElement.classList.add("dark"); window.requestAnimationFrame(() => setDark(true)); }
+    const isDark = document.documentElement.classList.contains("dark") || localStorage.getItem("foundry-theme") === "dark";
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      setDark(true);
+    }
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 

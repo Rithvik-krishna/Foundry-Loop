@@ -6,12 +6,20 @@ export function BrandLogo({ dark = false }: { dark?: boolean }) {
   return (
     <Link href="/" className={`brand-logo ${dark ? "brand-logo-dark" : ""}`} aria-label={`${site.name} home`}>
       <Image
-        className="brand-logo-image"
-        src={dark ? "/logo-dark.png" : "/logo-light.png"}
+        className="brand-logo-image brand-logo-image-light"
+        src="/logo-light.svg"
         alt={site.name}
-        width={390}
-        height={dark ? 112 : 100}
-        unoptimized
+        width={195}
+        height={32}
+        priority
+      />
+      <Image
+        className="brand-logo-image brand-logo-image-dark"
+        src="/logo-dark.svg"
+        alt={site.name}
+        width={195}
+        height={32}
+        priority
       />
     </Link>
   );
