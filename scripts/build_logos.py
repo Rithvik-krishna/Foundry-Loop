@@ -1,7 +1,7 @@
 import os, base64
 from PIL import Image
 
-def png_to_svg(png_path, svg_path, width=205, height=45):
+def png_to_svg(png_path, svg_path, width, height):
     with open(png_path, "rb") as f:
         data = base64.b64encode(f.read()).decode("utf-8")
     
@@ -11,8 +11,11 @@ def png_to_svg(png_path, svg_path, width=205, height=45):
     with open(svg_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
 
-png_to_svg("public/logo-light.png", "public/logo-light.svg")
-png_to_svg("public/logo-dark.png", "public/logo-dark.svg")
+img_l = Image.open("public/logo-light.png")
+img_d = Image.open("public/logo-dark.png")
+
+png_to_svg("public/logo-light.png", "public/logo-light.svg", img_l.width, img_l.height)
+png_to_svg("public/logo-dark.png", "public/logo-dark.svg", img_d.width, img_d.height)
 
 # Update Favicons
 mark = Image.open("public/logo-mark-primary.png")
@@ -34,4 +37,4 @@ svg_fav = f'''<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns=
 with open("public/favicon.svg", "w", encoding="utf-8") as f:
     f.write(svg_fav)
 
-print("Logos and Favicons built successfully!")
+print("Logos and Favicons rebuilt cleanly!")
