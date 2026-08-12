@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://foundrynloop.in</loc>
+    <loc>https://foundrynloop.in/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -31,12 +31,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://foundrynloop.in/news/building-ai-products-that-people-actually-use</loc>
+    <loc>https://foundrynloop.in/news/building-software-that-people-actually-use</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://foundrynloop.in/news/what-is-an-ai-agent</loc>
+    <loc>https://foundrynloop.in/news/the-future-of-secure-remote-access</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

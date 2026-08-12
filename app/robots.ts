@@ -3,10 +3,13 @@ import { site } from "../constants/content";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
+    rules: [
+      { userAgent: "Googlebot", allow: "/" },
+      { userAgent: "Bingbot", allow: "/" },
+      { userAgent: "OAI-SearchBot", allow: "/" },
+      { userAgent: "GPTBot", allow: "/" },
+      { userAgent: "*", allow: "/" },
+    ],
     sitemap: `${site.url}/sitemap.xml`,
   };
 }

@@ -14,7 +14,7 @@ export function createMetadata({
   type?: "website" | "article";
   ogImage?: string;
 }): Metadata {
-  const canonicalUrl = `${site.url}${path}`;
+  const canonicalUrl = path === "" || path === "/" ? `${site.url}/` : `${site.url}${path}`;
 
   return {
     title,

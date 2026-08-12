@@ -3,13 +3,33 @@ import { site } from "../constants/content";
 export function OrganizationJsonLd() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": site.name,
-    "alternateName": ["Foundry and Loop", "Foundry & Loop Technology"],
-    "url": site.url,
-    "logo": `${site.url}/logo-dark.png`,
-    "description": "Foundry & Loop is an independent technology company building AI-powered software and SaaS products.",
-    "sameAs": [site.socials.linkedin, site.socials.github],
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${site.url}/#organization`,
+        "name": site.name,
+        "alternateName": "Foundry and Loop",
+        "url": `${site.url}/`,
+        "logo": {
+          "@type": "ImageObject",
+          "@id": `${site.url}/#logo`,
+          "url": `${site.url}/logo-dark.png`,
+          "caption": site.name,
+        },
+        "description": "Foundry & Loop is an independent technology company building AI-powered software and SaaS products designed to solve real-world problems.",
+        "sameAs": [site.socials.linkedin, site.socials.github],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${site.url}/#website`,
+        "url": `${site.url}/`,
+        "name": site.name,
+        "alternateName": "Foundry and Loop",
+        "publisher": {
+          "@id": `${site.url}/#organization`,
+        },
+      },
+    ],
   };
 
   return (
@@ -21,20 +41,8 @@ export function OrganizationJsonLd() {
 }
 
 export function WebSiteJsonLd() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": site.name,
-    "alternateName": ["Foundry and Loop", "Foundry & Loop Technology"],
-    "url": site.url,
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  // Provided for backward compatibility if imported separately
+  return null;
 }
 
 export function ProductJsonLd({
@@ -58,8 +66,9 @@ export function ProductJsonLd({
     "url": url,
     "author": {
       "@type": "Organization",
+      "@id": `${site.url}/#organization`,
       "name": site.name,
-      "url": site.url,
+      "url": `${site.url}/`,
     },
   };
 
@@ -93,16 +102,13 @@ export function ArticleJsonLd({
     "datePublished": datePublished,
     "author": {
       "@type": "Organization",
+      "@id": `${site.url}/#organization`,
       "name": author || site.name,
-      "url": site.url,
+      "url": `${site.url}/`,
     },
     "publisher": {
       "@type": "Organization",
-      "name": site.name,
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${site.url}/logo-dark.png`,
-      },
+      "@id": `${site.url}/#organization`,
     },
   };
 
