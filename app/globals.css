@@ -76,8 +76,8 @@ button { cursor: pointer; }
 .button-secondary:hover { background: var(--surface-strong); }
 .button-ghost { background: transparent; border-color: var(--line-strong); color: var(--ink); }
 .button-ghost:hover { border-color: var(--ink); }
-.button-light { background: #fff; color: var(--ink); }
-.button-light:hover { background: #eaf0ff; color: var(--blue-deep); }
+.button-light { background: #ffffff !important; color: #0b0f1c !important; }
+.button-light:hover { background: #eaf0ff !important; color: #1d4ed8 !important; }
 .text-link { align-items: center; color: var(--blue); display: inline-flex; font-size: 13px; font-weight: 550; gap: 9px; transition: gap .25s ease; }
 .text-link:hover { gap: 14px; }
 
