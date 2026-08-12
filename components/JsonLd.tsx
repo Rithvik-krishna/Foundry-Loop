@@ -16,7 +16,7 @@ export function OrganizationJsonLd() {
           "url": `${site.url}/logo-dark.png`,
           "caption": site.name,
         },
-        "description": "Foundry & Loop is an independent technology company building AI-powered software and SaaS products designed to solve real-world problems.",
+        "description": "Foundry & Loop is an independent technology company building software and SaaS products designed to solve real-world problems.",
         "sameAs": [site.socials.linkedin, site.socials.github],
       },
       {
