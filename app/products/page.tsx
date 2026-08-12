@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Sparkles } from "lucide-react";
 import { AnimatedSection } from "../../components/AnimatedSection";
 import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
@@ -63,7 +63,7 @@ export default function ProductsPage() {
             </AnimatedSection>
             <div className="product-detail-grid">
               <div>
-                <p className="eyebrow">Current product</p>
+                <p className="eyebrow">Product developed &amp; operated by Foundry &amp; Loop</p>
                 <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px" }}>
                   <Image
                     src="/images/chameleon-logo-transparent.png"
@@ -83,7 +83,7 @@ export default function ProductsPage() {
               </div>
               <div className="product-detail-copy">
                 <p>
-                  Chameleon is a secure, low-latency remote access platform that lets you connect to and control your computer from virtually anywhere. Built around encrypted peer-to-peer WebRTC connectivity and QR-based pairing, Chameleon removes the complexity of traditional remote desktop tools.
+                  Chameleon is a product developed and operated by Foundry &amp; Loop. It is a secure, low-latency remote desktop platform that lets you connect to and control your computer from virtually anywhere through WebRTC peer-to-peer encryption and QR-based instant pairing.
                 </p>
                 <div className="product-meta">
                   <span>
@@ -93,9 +93,20 @@ export default function ProductsPage() {
                     <strong>Status</strong> {chameleon.status}
                   </span>
                 </div>
-                <Button href="/products/chameleon" variant="primary" arrow>
-                  Explore Chameleon
-                </Button>
+                <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "20px" }}>
+                  <Button href="/products/chameleon" variant="primary" arrow>
+                    Explore Chameleon
+                  </Button>
+                  <a
+                    href={chameleon.externalUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="button button-secondary"
+                    style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}
+                  >
+                    Visit Chameleon Website <ExternalLink size={15} />
+                  </a>
+                </div>
               </div>
             </div>
           </Container>

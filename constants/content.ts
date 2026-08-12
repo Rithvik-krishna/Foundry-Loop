@@ -2,7 +2,7 @@ export const site = {
   name: "Foundry & Loop",
   shortName: "Foundry & Loop",
   url: "https://foundrynloop.in",
-  description: "Foundry & Loop is an independent technology company building AI-powered software, SaaS products, and secure remote infrastructure designed to solve real-world problems.",
+  description: "Foundry & Loop is an independent technology company building software and SaaS products designed to solve real-world problems.",
   tagline: "Building software that matters.",
   email: "contact@foundrynloop.in",
   location: "Global / Remote-first",
@@ -15,6 +15,7 @@ export const site = {
 
 export const navigation = [
   { label: "About", href: "/about" },
+  { label: "Company", href: "/company" },
   { label: "Products", href: "/products" },
   { label: "News", href: "/news" },
   { label: "Careers", href: "/careers" },
@@ -24,6 +25,10 @@ export const pageMeta = {
   home: {
     title: "Foundry & Loop | Building Software That Matters",
     description: "Foundry & Loop is an independent technology company building software and SaaS products designed to solve real-world problems.",
+  },
+  company: {
+    title: "Foundry & Loop | Company",
+    description: "Learn about Foundry & Loop, an independent technology company building software and SaaS products designed to solve real-world problems.",
   },
   about: {
     title: "About Foundry & Loop | Independent Technology Company",
@@ -58,6 +63,33 @@ export const pageMeta = {
     description: "The terms of use for spending time with Foundry & Loop online.",
   },
 } as const;
+
+export const faqItems = [
+  {
+    question: "What is Foundry & Loop?",
+    answer: "Foundry & Loop is an independent technology company building software and SaaS products designed to solve real-world problems."
+  },
+  {
+    question: "What does Foundry & Loop do?",
+    answer: "Foundry & Loop designs, develops, and scales software products across secure remote access, SaaS platforms, and developer infrastructure."
+  },
+  {
+    question: "What products does Foundry & Loop build?",
+    answer: "Foundry & Loop develops and operates Chameleon, an ultra-low latency secure remote desktop platform, alongside new software products currently in development."
+  },
+  {
+    question: "What is Chameleon?",
+    answer: "Chameleon is an ultra-low latency secure remote access platform developed by Foundry & Loop that enables users to connect to and control their computers from anywhere with QR-based pairing and WebRTC peer-to-peer encryption."
+  },
+  {
+    question: "Is Chameleon a Foundry & Loop product?",
+    answer: "Yes. Chameleon is a product developed and operated by Foundry & Loop."
+  },
+  {
+    question: "What is the official Foundry & Loop website?",
+    answer: "The official website for Foundry & Loop is https://foundrynloop.in/."
+  }
+] as const;
 
 export const homeContent = {
   hero: {
@@ -206,11 +238,21 @@ export const articles = [
 ] as const;
 
 export const pagesContent = {
+  company: {
+    header: {
+      eyebrow: "Foundry & Loop",
+      title: "Foundry & Loop | Company",
+      description: "Learn about Foundry & Loop, an independent technology company building software and SaaS products designed to solve real-world problems."
+    },
+    overview: "Foundry & Loop is an independent technology company building software and SaaS products designed to solve real-world problems.",
+    buildText: "We design, develop, and scale software products with a focus on usability, reliability, and long-term value. Our work spans secure remote access infrastructure, SaaS platforms, and developer tools.",
+    chameleonText: "Chameleon is a product developed and operated by Foundry & Loop. It provides ultra-low latency, end-to-end encrypted remote desktop access through peer-to-peer WebRTC connectivity and QR-based instant pairing."
+  },
   about: {
     header: {
       eyebrow: "About Foundry & Loop",
       title: "We build technology with purpose.",
-      description: "Foundry & Loop is an independent technology company focused on building software products that solve meaningful problems. From secure remote access tools to SaaS platforms, we design, develop, and scale products with a focus on usability, reliability, and long-term value."
+      description: "Foundry & Loop is an independent technology company building software and SaaS products focused on solving meaningful problems."
     },
     image: { src: "/images/collaboration.jpg", alt: "Foundry & Loop team collaborating on software product design" },
     belief: "Great technology disappears into the way people live and work.",
@@ -219,7 +261,7 @@ export const pagesContent = {
       title: "Build technology",
       emphasis: "that is useful.",
       lead: "Purposeful, accessible, and made to last.",
-      description: "Our products are built independently under the Foundry & Loop ecosystem, with each product designed around a specific problem, audience, and opportunity. From secure remote access infrastructure to SaaS platforms, we make software that matters.",
+      description: "Foundry & Loop is an independent technology company focused on building software products that solve meaningful problems. From secure remote access tools like Chameleon to SaaS platforms, we design, develop, and scale products with a focus on usability, reliability, and long-term value.",
       cta: { label: "See what we’re building", href: "/products" }
     },
     values: [
@@ -233,9 +275,9 @@ export const pagesContent = {
   },
   products: {
     header: {
-      eyebrow: "Products",
+      eyebrow: "Products by Foundry & Loop",
       title: "Products built to matter.",
-      description: "Explore software and platforms built by Foundry & Loop, including tools and platforms designed to solve real-world problems."
+      description: "Explore software and platforms developed and operated by Foundry & Loop, built to solve real-world problems."
     },
     coming: {
       eyebrow: "The next chapter",
@@ -320,7 +362,7 @@ export const pagesContent = {
 export const footerContent = {
   statement: "Building software that matters.",
   contact: "Start a conversation",
-  explore: ["About", "Products", "News"],
+  explore: ["About", "Company", "Products", "News"],
   company: ["Careers", "Contact"],
   elsewhere: ["LinkedIn"],
   note: "Purposeful technology for the long term.",

@@ -6,6 +6,7 @@ import { footerContent, site } from "../constants/content";
 
 const hrefs = {
   About: "/about",
+  Company: "/company",
   Products: "/products",
   News: "/news",
   Careers: "/careers",

@@ -4,6 +4,7 @@ import { site, articles } from "../constants/content";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "/",
+    "/company",
     "/about",
     "/products",
     "/products/chameleon",
@@ -16,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: route === "/" ? `${site.url}/` : `${site.url}${route}`,
     lastModified: new Date().toISOString().split("T")[0],
     changeFrequency: route === "/" ? ("daily" as const) : ("weekly" as const),
-    priority: route === "/" ? 1.0 : route.startsWith("/products") ? 0.9 : 0.8,
+    priority: route === "/" ? 1.0 : route === "/company" || route.startsWith("/products") ? 0.9 : 0.8,
   }));
 
   const articleRoutes = articles.map((article) => ({
