@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Environment, ContactShadows, PresentationControls, Html } from '@react-three/drei';
+import { ContactShadows, PresentationControls } from '@react-three/drei';
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import { RingObject } from './RingObject';
 import { MediaImage } from '../MediaImage';
@@ -11,16 +11,13 @@ import { homeContent } from '../../constants/content';
 export function HeroScene() {
   const [isDarkMode, setIsDarkMode] = React.useState(true);
   const [isLowPowerMobile, setIsLowPowerMobile] = React.useState(false);
-  const [isLoaded, setIsLoaded] = React.useState(false);
 
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Fallback to static image only on small mobile viewports
+    // Fallback to static image only on mobile screen widths < 640px
     const isMobileViewport = window.innerWidth < 640;
     setIsLowPowerMobile(isMobileViewport);
-
-    setIsLoaded(true);
 
     // Track theme state (light vs dark mode)
     const updateTheme = () => {
@@ -37,7 +34,7 @@ export function HeroScene() {
     return () => observer.disconnect();
   }, []);
 
-  // Fallback to static hero PNG on mobile or low-power devices
+  // Fallback to static hero PNG on mobile screens < 640px
   if (isLowPowerMobile) {
     return (
       <div className="w-full h-full relative flex items-center justify-center">
@@ -51,45 +48,41 @@ export function HeroScene() {
   }
 
   return (
-    <div className="w-full h-full relative flex items-center justify-center overflow-hidden rounded-2xl select-none">
-      {/* Static placeholder while 3D scene streams in */}
-      {!isLoaded && (
-        <div className="absolute inset-0 z-0 flex items-center justify-center transition-opacity duration-500">
-          <MediaImage
-            {...homeContent.hero.image}
-            sizes="(max-width: 900px) 100vw, 52vw"
-            priority
-          />
-        </div>
-      )}
-
+    <div className="w-full h-full relative flex items-center justify-center overflow-hidden rounded-2xl select-none" style={{ minHeight: '500px', height: '100%' }}>
       {/* 3D Canvas */}
       <Canvas
         dpr={[1, 1.5]}
         camera={{ position: [0, 0, 5.8], fov: 42 }}
-        onCreated={() => setIsLoaded(true)}
         className="w-full h-full relative z-10 cursor-grab active:cursor-grabbing"
         gl={{ antialias: true, alpha: true }}
       >
         <React.Suspense fallback={null}>
-          <Environment preset="city" />
+          {/* Procedural Studio Lighting for realistic chrome metallic reflections */}
+          <hemisphereLight skyColor="#3b82f6" groundColor="#0d0f14" intensity={isDarkMode ? 1.4 : 1.8} />
+
+          {/* Key light front-upper-left */}
+          <directionalLight
+            position={[-4, 5, 5]}
+            color={isDarkMode ? '#ffffff' : '#f0f4ff'}
+            intensity={isDarkMode ? 2.4 : 2.8}
+          />
 
           {/* Cool blue-tinted rim light behind object */}
           <pointLight
             position={[4, 5, -4]}
             color="#2563ff"
-            intensity={isDarkMode ? 3.5 : 2.0}
+            intensity={isDarkMode ? 4.5 : 3.0}
           />
 
-          {/* Soft key light from front-upper-left */}
-          <directionalLight
-            position={[-3, 4, 5]}
-            color={isDarkMode ? '#ffffff' : '#f0f4ff'}
-            intensity={isDarkMode ? 1.6 : 2.2}
+          {/* Accent fill light bottom-right */}
+          <pointLight
+            position={[-3, -3, 3]}
+            color="#3b82f6"
+            intensity={isDarkMode ? 3.0 : 2.0}
           />
 
-          {/* Ambient lighting */}
-          <ambientLight intensity={isDarkMode ? 0.35 : 0.65} />
+          {/* Ambient baseline */}
+          <ambientLight intensity={isDarkMode ? 0.4 : 0.7} />
 
           {/* Grounding Contact Shadows */}
           <ContactShadows

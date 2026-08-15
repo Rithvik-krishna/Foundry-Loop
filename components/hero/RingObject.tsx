@@ -42,21 +42,19 @@ export function RingObject({ isDarkMode = true }: RingObjectProps) {
   useFrame((state, delta) => {
     if (!groupRef.current) return;
 
-    if (!prefersReducedMotion) {
-      // Idle continuous rotation when not actively dragging
-      if (!isDraggingRef.current) {
-        groupRef.current.rotation.y += delta * 0.18;
-      }
-
-      // Floating sine wave vertical bob
-      groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 1.4) * 0.05;
-
-      // Parallax cursor tilt lerp
-      const targetRotX = mousePos.current.y * 0.08;
-      const targetRotZ = -mousePos.current.x * 0.08;
-      groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, targetRotX, 0.05);
-      groupRef.current.rotation.z = THREE.MathUtils.lerp(groupRef.current.rotation.z, targetRotZ, 0.05);
+    // Idle continuous rotation when not actively dragging
+    if (!isDraggingRef.current) {
+      groupRef.current.rotation.y += delta * 0.22;
     }
+
+    // Floating sine wave vertical bob
+    groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 1.5) * 0.08;
+
+    // Parallax cursor tilt lerp
+    const targetRotX = mousePos.current.y * 0.1;
+    const targetRotZ = -mousePos.current.x * 0.1;
+    groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, targetRotX, 0.05);
+    groupRef.current.rotation.z = THREE.MathUtils.lerp(groupRef.current.rotation.z, targetRotZ, 0.05);
   });
 
   // Dark brushed gunmetal steel outer material
