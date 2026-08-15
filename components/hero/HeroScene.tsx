@@ -16,10 +16,11 @@ export function HeroScene() {
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Detect mobile / low-hardware concurrency devices for fallback
-    const isMobileViewport = window.innerWidth < 768;
-    const isLowConcurrency = typeof navigator !== 'undefined' && navigator.hardwareConcurrency < 4;
-    setIsLowPowerMobile(isMobileViewport || isLowConcurrency);
+    // Fallback to static image only on small mobile viewports
+    const isMobileViewport = window.innerWidth < 640;
+    setIsLowPowerMobile(isMobileViewport);
+
+    setIsLoaded(true);
 
     // Track theme state (light vs dark mode)
     const updateTheme = () => {
