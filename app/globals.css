@@ -95,7 +95,13 @@ button { cursor: pointer; }
 .hero-image { background: var(--surface); border-radius: 0 0 0 var(--radius-lg); height: 500px; overflow: hidden; position: relative; }
 .hero-image:after, .story-image-large:after, .product-detail-visual:after { background: linear-gradient(140deg, rgba(37,99,255,.15), transparent 52%); content: ""; inset: 0; mix-blend-mode: screen; pointer-events: none; position: absolute; }
 .cover-image { height: 100%; inset: 0; object-fit: cover; position: absolute; width: 100%; }
-.hero-image img, .story-image-large img, .product-detail-visual img { object-fit: cover; object-position: center; filter: saturate(.72) contrast(1.08); }
+.hero-image img { object-fit: cover; object-position: center; filter: saturate(1.05) contrast(1.05); animation: heroSculptureFloat 16s ease-in-out infinite; will-change: transform; }
+.story-image-large img, .product-detail-visual img { object-fit: cover; object-position: center; filter: saturate(.72) contrast(1.08); }
+
+@keyframes heroSculptureFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-7px) scale(1.012); }
+}
 .hero-floating-card { align-items: center; background: var(--background); border: 1px solid var(--line); bottom: 52px; display: flex; font-size: 10px; font-weight: 600; gap: 10px; left: -24px; letter-spacing: .13em; padding: 15px 16px; position: absolute; }
 .hero-floating-card strong { color: var(--ink-faint); font-weight: 500; margin-left: 18px; }
 .hero-caption { bottom: -31px; color: var(--ink-faint); display: flex; font-size: 10px; justify-content: space-between; letter-spacing: .12em; position: absolute; text-transform: uppercase; width: 100%; }
