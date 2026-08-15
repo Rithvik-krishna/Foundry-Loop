@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { CursorProvider, Cursor, CursorFollow } from '@/components/ui/cursor';
+import { CursorProvider, Cursor } from '@/components/ui/cursor';
 
 export function CustomCursorWrapper({ children }: { children: React.ReactNode }) {
   const [isDesktop, setIsDesktop] = React.useState(false);
@@ -36,12 +36,6 @@ export function CustomCursorWrapper({ children }: { children: React.ReactNode })
           />
         </svg>
       </Cursor>
-      <CursorFollow align="bottom-right" sideOffset={12}>
-        <div className="bg-[#2563ff] text-white px-2.5 py-1 rounded-full text-[11px] font-medium tracking-tight shadow-lg shadow-blue-500/25 flex items-center gap-1.5 border border-white/20 backdrop-blur-md">
-          <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
-          Foundry & Loop
-        </div>
-      </CursorFollow>
       {children}
     </CursorProvider>
   );
