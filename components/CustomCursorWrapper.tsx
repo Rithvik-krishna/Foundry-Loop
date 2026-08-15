@@ -9,11 +9,11 @@ function CustomCursorInner() {
   return (
     <Cursor>
       <svg
-        className="w-7 h-7 transition-all duration-150 filter drop-shadow-[0_1px_3px_rgba(0,0,0,0.3)]"
+        className="w-[21px] h-[21px] transition-all duration-150 filter drop-shadow-[0_1px_3px_rgba(0,0,0,0.3)]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        width="28"
-        height="28"
+        width="21"
+        height="21"
       >
         <path
           fill={isOverBlue ? '#ffffff' : '#2563ff'}
