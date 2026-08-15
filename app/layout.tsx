@@ -51,6 +51,8 @@ export const viewport: Viewport = {
   ],
 };
 
+import { CustomCursorWrapper } from "../components/CustomCursorWrapper";
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -69,7 +71,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           }}
         />
       </head>
-      <body className={inter.variable}>{children}</body>
+      <body className={inter.variable}>
+        <CustomCursorWrapper>{children}</CustomCursorWrapper>
+      </body>
     </html>
   );
 }
