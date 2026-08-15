@@ -97,7 +97,7 @@ function Cursor({ ref, children, className, style, ...props }: CursorProps) {
           ref={cursorRef}
           data-slot="cursor"
           className={cn(
-            'pointer-events-none fixed top-0 left-0 z-[99999] -translate-x-1/2 -translate-y-1/2',
+            'pointer-events-none fixed top-0 left-0 z-[99999]',
             className,
           )}
           style={{ x: mouseX, y: mouseY, ...style }}

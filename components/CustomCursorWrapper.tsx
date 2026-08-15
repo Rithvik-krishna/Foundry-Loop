@@ -24,13 +24,15 @@ export function CustomCursorWrapper({ children }: { children: React.ReactNode })
     <CursorProvider className="relative min-h-screen">
       <Cursor>
         <svg
-          className="size-5 text-[#2563ff] filter drop-shadow-[0_2px_10px_rgba(37,99,255,0.6)]"
+          className="w-5 h-5 text-[#2563ff] filter drop-shadow-[0_2px_8px_rgba(37,99,255,0.65)]"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 40 40"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
         >
           <path
             fill="currentColor"
-            d="M1.8 4.4 7 36.2c.3 1.8 2.6 2.3 3.6.8l3.9-5.7c1.7-2.5 4.5-4.1 7.5-4.3l6.9-.5c1.8-.1 2.5-2.4 1.1-3.5L5 2.5c-1.4-1.1-3.5 0-3.3 1.9Z"
+            d="M0 0 L0 16 L4.2 11.8 L7.8 20.2 L10.6 18.9 L7 10.5 L12.8 9.9 Z"
           />
         </svg>
       </Cursor>
