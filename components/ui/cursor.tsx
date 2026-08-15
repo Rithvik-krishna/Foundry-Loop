@@ -17,6 +17,7 @@ type CursorContextType = {
   mouseX: MotionValue<number>;
   mouseY: MotionValue<number>;
   isActive: boolean;
+  isOverBlue: boolean;
   containerRef: React.RefObject<HTMLDivElement | null>;
   cursorRef: React.RefObject<HTMLDivElement | null>;
 };
@@ -41,6 +42,7 @@ function CursorProvider({ ref, children, ...props }: CursorProviderProps) {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
   const [isActive, setIsActive] = React.useState(false);
+  const [isOverBlue, setIsOverBlue] = React.useState(false);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const cursorRef = React.useRef<HTMLDivElement>(null);
 
@@ -49,6 +51,8 @@ function CursorProvider({ ref, children, ...props }: CursorProviderProps) {
   React.useEffect(() => {
     // Hide native cursor globally across the entire page
     document.documentElement.classList.add('hide-native-cursor');
+
+    let rafId: number | null = null;
 
     const handleMouseMove = (e: MouseEvent) => {
       // Account for CSS zoom on document.body (e.g., zoom: 0.9)
@@ -59,6 +63,34 @@ function CursorProvider({ ref, children, ...props }: CursorProviderProps) {
       mouseX.set(e.clientX / effectiveZoom);
       mouseY.set(e.clientY / effectiveZoom);
       if (!isActive) setIsActive(true);
+
+      // Dynamically detect if underlying element is blue to invert cursor colors
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const elem = document.elementFromPoint(e.clientX, e.clientY);
+        if (elem) {
+          let current: HTMLElement | null = elem as HTMLElement;
+          let foundBlue = false;
+          while (current && current !== document.body && current !== document.documentElement) {
+            const bg = window.getComputedStyle(current).backgroundColor;
+            if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
+              const match = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+              if (match) {
+                const r = parseInt(match[1], 10);
+                const g = parseInt(match[2], 10);
+                const b = parseInt(match[3], 10);
+                // If blue dominates (brand blue #2563ff = rgb(37,99,255))
+                if (b > 160 && b > r + 30) {
+                  foundBlue = true;
+                  break;
+                }
+              }
+            }
+            current = current.parentElement;
+          }
+          setIsOverBlue(foundBlue);
+        }
+      });
     };
 
     const handleMouseLeave = () => setIsActive(false);
@@ -69,6 +101,7 @@ function CursorProvider({ ref, children, ...props }: CursorProviderProps) {
     document.addEventListener('mouseenter', handleMouseEnter);
 
     return () => {
+      if (rafId) cancelAnimationFrame(rafId);
       document.documentElement.classList.remove('hide-native-cursor');
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
@@ -78,7 +111,7 @@ function CursorProvider({ ref, children, ...props }: CursorProviderProps) {
 
   return (
     <CursorContext.Provider
-      value={{ mouseX, mouseY, isActive, containerRef, cursorRef }}
+      value={{ mouseX, mouseY, isActive, isOverBlue, containerRef, cursorRef }}
     >
       <div ref={containerRef} data-slot="cursor-provider" {...props}>
         {children}
