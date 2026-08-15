@@ -10,6 +10,7 @@ function CustomCursorInner() {
     <Cursor>
       <svg
         className="w-[21px] h-[21px] transition-all duration-150 filter drop-shadow-[0_1px_3px_rgba(0,0,0,0.3)]"
+        style={{ transformOrigin: '0 0', transform: 'rotate(12deg)' }}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         width="21"
