@@ -1,33 +1,24 @@
-"use client";
-
-import * as React from "react";
+import dynamic from "next/dynamic";
 import { ArrowDown } from "lucide-react";
 import { Container } from "./Container";
 import { Button } from "./Button";
 import { AnimatedSection } from "./AnimatedSection";
 import { MediaImage } from "./MediaImage";
-import { HeroScene } from "./hero/HeroScene";
 import { homeContent, site } from "../constants/content";
 
-function Hero3DVisual() {
-  const [isClient, setIsClient] = React.useState(false);
-
-  React.useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return (
+const HeroScene = dynamic(
+  () => import("./hero/HeroScene").then((mod) => mod.HeroScene),
+  {
+    ssr: false,
+    loading: () => (
       <MediaImage
         {...homeContent.hero.image}
         sizes="(max-width: 900px) 100vw, 52vw"
         priority
       />
-    );
+    ),
   }
-
-  return <HeroScene />;
-}
+);
 
 export function Hero() {
   const { hero } = homeContent;
@@ -52,7 +43,7 @@ export function Hero() {
           </AnimatedSection>
           <AnimatedSection className="hero-visual" delay={0.12}>
             <div className="hero-image">
-              <Hero3DVisual />
+              <HeroScene />
             </div>
             <div className="hero-floating-card">
               <span className="status-dot" /> {hero.card} <strong>01</strong>
