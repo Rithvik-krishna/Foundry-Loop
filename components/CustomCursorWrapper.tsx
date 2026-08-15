@@ -20,7 +20,7 @@ function CustomCursorInner() {
           stroke={isOverBlue ? '#1d4ed8' : '#ffffff'}
           strokeWidth="1.0"
           strokeLinejoin="round"
-          d="M1 1 L1 17 L5.2 12.8 L8.8 21.2 L11.6 19.9 L8 11.5 L13.8 10.9 Z"
+          d="M0 0 L22 9.5 L12 12 L9.5 22 Z"
         />
       </svg>
     </Cursor>
