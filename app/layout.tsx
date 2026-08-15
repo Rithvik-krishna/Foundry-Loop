@@ -52,6 +52,7 @@ export const viewport: Viewport = {
 };
 
 import { CustomCursorWrapper } from "../components/CustomCursorWrapper";
+import { PageTransitionLoader } from "../components/PageTransitionLoader";
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -72,7 +73,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body className={inter.variable}>
-        <CustomCursorWrapper>{children}</CustomCursorWrapper>
+        <PageTransitionLoader>
+          <CustomCursorWrapper>{children}</CustomCursorWrapper>
+        </PageTransitionLoader>
       </body>
     </html>
   );
