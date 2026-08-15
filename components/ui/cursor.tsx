@@ -51,8 +51,13 @@ function CursorProvider({ ref, children, ...props }: CursorProviderProps) {
     document.documentElement.classList.add('hide-native-cursor');
 
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      // Account for CSS zoom on document.body (e.g., zoom: 0.9)
+      const zoomStr = window.getComputedStyle(document.body).zoom;
+      const zoom = zoomStr ? parseFloat(zoomStr) : 1;
+      const effectiveZoom = isNaN(zoom) || zoom <= 0 ? 1 : zoom;
+
+      mouseX.set(e.clientX / effectiveZoom);
+      mouseY.set(e.clientY / effectiveZoom);
       if (!isActive) setIsActive(true);
     };
 
