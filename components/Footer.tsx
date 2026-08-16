@@ -11,8 +11,9 @@ const hrefs = {
   News: "/news",
   Careers: "/careers",
   Contact: "/contact",
-  Privacy: "/privacy",
-  Terms: "/terms",
+  "Privacy Policy": "/privacy",
+  "Terms of Service": "/terms",
+  "Cancellation & Refund Policy": "/refund-policy",
 } as const;
 
 const externalHrefs = {

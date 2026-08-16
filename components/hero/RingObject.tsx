@@ -20,6 +20,7 @@ export function RingObject({ isDarkMode = true }: RingObjectProps) {
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPrefersReducedMotion(mq.matches);
     const onChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
     mq.addEventListener('change', onChange);

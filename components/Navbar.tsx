@@ -22,6 +22,7 @@ export function Navbar() {
       localStorage.getItem("foundry-theme") === "dark";
     if (isDark) {
       document.documentElement.classList.add("dark");
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setDark(true);
     }
     return () => window.removeEventListener("scroll", onScroll);

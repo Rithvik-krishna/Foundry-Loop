@@ -56,11 +56,15 @@ export const pageMeta = {
   },
   privacy: {
     title: "Privacy Policy | Foundry & Loop",
-    description: "Learn how Foundry & Loop handles information and protects your privacy.",
+    description: "Learn how Foundry & Loop collects, uses, protects and manages personal information.",
   },
   terms: {
-    title: "Terms of Use | Foundry & Loop",
-    description: "The terms of use for spending time with Foundry & Loop online.",
+    title: "Terms of Service | Foundry & Loop",
+    description: "Terms of Service governing the use of Foundry & Loop services and website.",
+  },
+  refund: {
+    title: "Cancellation & Refund Policy | Foundry & Loop",
+    description: "Cancellation and refund terms for Foundry & Loop website development, SEO and lead-generation services.",
   },
 } as const;
 
@@ -366,5 +370,5 @@ export const footerContent = {
   company: ["Careers", "Contact"],
   elsewhere: ["LinkedIn"],
   note: "Purposeful technology for the long term.",
-  legal: ["Privacy", "Terms"],
+  legal: ["Privacy Policy", "Terms of Service", "Cancellation & Refund Policy"],
 } as const;

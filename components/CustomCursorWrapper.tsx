@@ -34,6 +34,7 @@ export function CustomCursorWrapper({ children }: { children: React.ReactNode })
   React.useEffect(() => {
     // Only enable custom cursor on fine pointer devices (mouse/trackpad)
     const mediaQuery = window.matchMedia('(pointer: fine)');
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsDesktop(mediaQuery.matches);
 
     const handleChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
