@@ -12,6 +12,7 @@ export function HeroScene() {
         fill
         sizes="(max-width: 540px) 100vw, (max-width: 900px) 90vw, 55vw"
         priority
+        unoptimized
         quality={98}
         className="hero-system-image"
       />
