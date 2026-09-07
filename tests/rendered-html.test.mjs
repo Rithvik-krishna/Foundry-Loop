@@ -20,7 +20,7 @@ test("server-renders the Foundry & Loop home page", async () => {
 });
 
 test("server-renders the primary content pages", async () => {
-  for (const [path, title] of [["/about", "Technology with a point of view"], ["/products", "Useful by design"], ["/contact", "Let’s make something useful"]]) {
+  for (const [path, title] of [["/about", "We build technology with purpose"], ["/products", "Products built to matter"], ["/contact", "Contact Foundry"]]) {
     const response = await render(path);
     assert.equal(response.status, 200, path);
     assert.match(await response.text(), new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"));
