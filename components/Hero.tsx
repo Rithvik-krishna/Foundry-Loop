@@ -30,9 +30,6 @@ export function Hero() {
             <div className="hero-image">
               <HeroScene />
             </div>
-            <div className="hero-floating-card">
-              <span className="status-dot" /> {hero.card} <strong>01</strong>
-            </div>
             <div className="hero-caption">
               <span>01 — 03</span>
               <span>{hero.caption}</span>
