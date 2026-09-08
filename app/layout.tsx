@@ -61,7 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <WebSiteJsonLd />
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{if(localStorage.getItem('foundry-theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}`,
+            __html: `try{if(localStorage.getItem('foundry-theme')==='dark'||location.search.indexOf('theme=dark')!==-1)document.documentElement.classList.add('dark')}catch(e){}`,
           }}
         />
         <script

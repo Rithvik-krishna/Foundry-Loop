@@ -101,7 +101,12 @@ export const homeContent = {
     title: "Building software",
     emphasis: "that matters.",
     description: "Foundry & Loop is an independent technology company building software and SaaS products for modern businesses. We turn complex problems into purposeful, reliable products designed to make work simpler, faster, and more effective.",
-    image: { src: "/images/foundry-system-hero.webp", alt: "" },
+    image: {
+      src: "/images/foundry-system-hero-dark.webp",
+      darkSrc: "/images/foundry-system-hero-dark.webp",
+      lightSrc: "/images/foundry-system-hero-light.webp",
+      alt: "",
+    },
     primaryCta: { label: "Explore products", href: "/products" },
     secondaryCta: { label: "About us", href: "/about" },
     card: "Build with purpose",
